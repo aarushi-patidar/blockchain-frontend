@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-avant: var(--font-avant-garde);
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+.scroller::-webkit-scrollbar{
+    display: none;
+}
+.scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll ;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.scroller h4{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 600;
+    margin-right: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    transition: all linear 0.4s;
+    text-transform: uppercase;
+}
+.scroller h4:hover{
+    color: #33b831b4;
+    -webkit-text-stroke: 1px #33b831b4;
+}
+
+.shadow {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(87, 86, 86, 0.22)
+  );
+  box-shadow:
+    inset 0 0.125em 0.125em rgba(211, 211, 211, 0.35),
+    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.08),
+    0 0.3em 0.1em rgba(0, 0, 0, 0.305),
+    0 0 0.15em inset rgba(255, 255, 255, 0.04);
+}
+
+.glass-scrollbar-bold::-webkit-scrollbar-button {
+  width: 0px;
+}
+
+.glass-scrollbar-bold {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0);
+}
+
+.glass-scrollbar-bold::-webkit-scrollbar {
+  width: 10px;
+}
+
+.glass-scrollbar-bold::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 999px;
+  margin: 10px 0;
+}
+
+.glass-scrollbar-bold::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  min-height: 36px;
+}
+
+.glass-scrollbar-bold::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);
+}
